@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import GroupsDiffeomorphismsHomeomorphismsManifoldsCanonicalLaneLean.DiffeomorphismGroup
+import GroupsDiffeomorphismsHomeomorphismsManifoldsCanonicalLaneLean.HomeomorphismGroup
+import GroupsDiffeomorphismsHomeomorphismsManifoldsCanonicalLaneLean.MappingClassGroup
+import GroupsDiffeomorphismsHomeomorphismsManifoldsCanonicalLaneLean.DiffeomorphismGroupAction
+
+namespace HautevilleHouse
+namespace GroupsDiffeomorphismsHomeomorphismsManifoldsCanonicalLaneLean
+
+def ConstrainedGroupsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_groups_endgame (A : AdmissibleClass) : ConstrainedGroupsClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end GroupsDiffeomorphismsHomeomorphismsManifoldsCanonicalLaneLean
+end HautevilleHouse
